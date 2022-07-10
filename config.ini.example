@@ -1,0 +1,6 @@
+[Default]
+
+SUBDOMAIN: SOMENAMEFORSUBDOMAIN
+DOMAIN: YOURDOMAIN
+USEDNSRESOLVER: True  # query the current state via dns and not via api calls
+CLOUDFLARE_TOKEN: PUT YOUR TOKEN
