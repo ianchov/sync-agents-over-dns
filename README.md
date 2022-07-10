@@ -96,18 +96,18 @@ So the cost of ownership a solution that manages independent agents is close to 
 
 ### Block diagram
 
-![alt text](/raw/master/images/blockdiagram.png "Block diagram")
+![alt text](https://github.com/ianchov/sync-agents-over-dns/blob/master/images/blockdiagram.png?raw=true "Block diagram")
 
 ### Activity diagram
 
-![Activity diagram](/raw/master/images/activity.png  "Activity diagram")
+![Activity diagram](https://github.com/ianchov/sync-agents-over-dns/blob/master/images/activity.png?raw=true "Activity diagram")
 
 
 ### Sequential diagram
 
-![Sequential diagram](/raw/master/images/sequencial.png  "Sequential diagram")
+![Sequential diagram](https://github.com/ianchov/sync-agents-over-dns/blob/master/images/sequencial.png?raw=true "Sequential diagram")
 
 
-![visual of 3 agents](/raw/master/images/agents_syncing_over_api_calls.JPG "Visual")
+![visual of 3 agents](https://github.com/ianchov/sync-agents-over-dns/blob/master/images/agents_syncing_over_api_calls.JPG?raw=true "Visual")
 
 
