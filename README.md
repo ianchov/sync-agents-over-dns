@@ -1,10 +1,12 @@
 ## What it solves?
+Lets imagine a scenario:
+We have an app instances=1 which do some periodic job - checking a url, making an api call whatever and then reporting the status of the job/api response/etc. If this app is unavailable because it is being redeployed(in CF, a new diego cell, in k8s the pod is recreated) then for a brief period of time the job that we need to be executed, wont be executed. Image the whole landscape in that region being down..a total outage.
+So the objective is to have a reliable way to sync several of those app instances so at least one to execute the job and notify for its status.
+How do we do that without complicating the architecture and without using any 3rd party tools like zookeper, etcd, postgresql?
 
-I wrote an automation that checks regularly some APIs and if some conditions are met, makes some things and writes in a slack channel. This is packaged as a cf app running is 1 instance. If i run this app in 2 or more instances, i would get the same checks/writes in slack many times (as the instances number).
-So i had to find a way to have several agents running but best only one of them to run check the APIs and execute things.
-Without complicating the architecture and without using any 3rd party like zookeper, etcd, postgresql i designed agents synchronization over dns txt records..
+We need a fault tolerant, simple solution to have a consensus over job agents. They are solutions - like the paxos algorithm, raft algorith and others however they require a connection between the agents or a leader election.
 
-We need a fault tolerant, simple solution to have a consensus over job agents. The current solutions include the paxos algorithm, raft algorith and others however they require either a knowleadge and connection between the agents or a leader again with a connection/knowleadge for the agents.
+What if we want to have several agents without any knowleadge between themselves for the existence of the others? And then deploy those "agents" in different iaas regions and providers?
 
 ## What is the idea?
 
