@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
+  ],
+  "stabilityDays": 7,  // Ensures updates are stable for 7 days before being proposed
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major", "minor", "patch"],  // Applies to major, minor, and patch updates
+      "excludePrerelease": true  // Excludes pre-releases (alpha, beta, etc.)
+    }
   ]
 }
